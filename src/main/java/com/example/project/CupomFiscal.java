@@ -15,22 +15,16 @@ public class CupomFiscal {
 	public static String CNPJ = "42.591.651/0797-34";
 	public static String INSCRICAO_ESTADUAL = "244.898.500.113";
 
-	public static void exercicio01(){
-		
-		System.out.printf("%s\n" +
-			"%s, %d %s\n" +
-			"%s - %s - %s\n" +
-			"CEP:%s Tel %s\n" +
-			"%s\n" +
-			"CNPJ: %s\n" +
-			"IE: %s", NOME_LOJA, LOGRADOURO, NUMERO,
-					COMPLEMENTO, BAIRRO, MUNICIPIO,
-					ESTADO, CEP, TELEFONE, OBSERVACAO,
-					CNPJ, INSCRICAO_ESTADUAL);
-	}
-
 	public static void main(final String[] args) {
-		exercicio01();
+		String saida = NOME_LOJA + "\n";
+		saida += String.format("%s, %d %s\n", LOGRADOURO, NUMERO, COMPLEMENTO);
+		saida += String.format("%s - %s - %s\n", BAIRRO, MUNICIPIO, ESTADO);
+		saida += String.format("CEP:%s Tel %s\n", CEP, TELEFONE);
+		saida += OBSERVACAO + "\n";
+		saida += String.format("CNPJ: %s\n", CNPJ);
+		saida += String.format("IE: %s", INSCRICAO_ESTADUAL);
+		saida = saida.replace("\n", "" + System.lineSeparator() + "");
+		System.out.println(saida);
 	}
 
 }
